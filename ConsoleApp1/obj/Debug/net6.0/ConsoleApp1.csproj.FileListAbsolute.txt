@@ -13,3 +13,17 @@
 /home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/obj/Debug/net6.0/ref/ConsoleApp1.dll
 /home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.pdb
 /home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.genruntimeconfig.cache
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Json.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Configuration.UserSecrets.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Physical.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/System.IO.Pipelines.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/bin/Debug/net6.0/System.Text.Json.dll
+/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/obj/Debug/net6.0/ConsoleApp1.csproj.CopyComplete

@@ -9,10 +9,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
-
-public class Call {
-    private static string token = "gVmotaaAMJLzifhZ1dozeM";
+public static class Call {
+    private static string token = Program.secret["ApiSettings:TokenP"]!;
     private static string baseAddress = "https://brapi.dev/api/quote";
     private static HttpClient client = new(){};
 
@@ -49,7 +49,7 @@ public class Call {
 } 
 
 public class Email {
-    private static string token = "mlsn.895613bbcf08bba8d58cae0190ea4e8b9cdeea4310a4e9926bb0644ba103d9d7";
+    private static string token = Program.secret["ApiSettings:TokenE"]!;
 
     private static string baseAddress = "https://api.mailersend.com/v1/email";
 
@@ -57,12 +57,12 @@ public class Email {
         var parameters = new
         {
             from = new {
-                email = "fred@trial-yxj6lj9x9z54do2r.mlsender.net"
+                email = Program.config["EmailSettings:From"]
             },
 
             to = new[] {
                 new {
-                    email = "bfredb.20221@poli.ufrj.br"
+                    email = Program.config["EmailSettings:To"]
                 }
             },
             
@@ -106,6 +106,7 @@ public class Email {
     }
 }
 
+//classes feitas para pegar o regularMarketPrice do ativo da resposta da API
 public class APIResponse {
     public List<APIResults>? results { get; set; }
 }
@@ -113,7 +114,12 @@ public class APIResponse {
 public class APIResults {
     public double regularMarketPrice { get; set; }
 }
-public class MainProgram {
+
+public class Program {
+    public static IConfiguration secret = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
+
+    public static IConfiguration config = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
+
 
     private static double INFlowerBound = 1e15, INFupperBound = 1e16; 
     private static double returnDelta = 0.01, priceDelta = 0.05; 
@@ -174,10 +180,10 @@ public class MainProgram {
 
                 double currentPrice = JsonSerializer.Deserialize<APIResponse>(responseData)!.results![0].regularMarketPrice;
 
-                // Caso não seja informado os valores de referência, inicializar com valores baseados no preço atual 
+                // Caso não seja informado os valores de referência, inicializar com valores baseados no preço atual com um delta
 
-                if(Math.Abs(INFlowerBound - lowerBound) > 1e-4) lowerBound = currentPrice - currentPrice*priceDelta;
-                if(Math.Abs(INFupperBound - upperBound) > 1e-4) upperBound = currentPrice + currentPrice*priceDelta;
+                if(Math.Abs(INFlowerBound - lowerBound) < 1e-4) lowerBound = currentPrice - currentPrice*priceDelta;
+                if(Math.Abs(INFupperBound - upperBound) < 1e-4) upperBound = currentPrice + currentPrice*priceDelta;
 
                 Console.WriteLine(currentPrice);
 
@@ -214,11 +220,9 @@ public class MainProgram {
                 }
             }
 
-            // Console.WriteLine("Oi");
-
             await Task.Delay(TimeSpan.FromSeconds(30));
 
-            while(DateTime.Now.TimeOfDay.Hours <= 7 || DateTime.Now.TimeOfDay.Hours >= 10){
+            while(DateTime.Now.TimeOfDay.Hours <= 7 || DateTime.Now.TimeOfDay.Hours >= 18){
                 Console.WriteLine($"Mercado brasileiro fechado. Esperando abrir para continuar a monitorar o ativo. Horário atual {DateTime.Now.TimeOfDay.Hours}:{DateTime.Now.TimeOfDay.Minutes}:{DateTime.Now.TimeOfDay.Seconds}");
                 await Task.Delay(TimeSpan.FromMinutes(1));
             }
