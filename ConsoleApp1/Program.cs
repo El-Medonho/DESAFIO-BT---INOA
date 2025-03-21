@@ -16,6 +16,7 @@ public static class Call {
     private static string baseAddress = "https://brapi.dev/api/quote";
     private static HttpClient client = new(){};
 
+    //função para chamar os dados do ativo requisitado
     public static async Task<HttpResponseMessage?> GetAsync(string ticker) {
         var parameters = new Dictionary<string, string>
         {
@@ -53,6 +54,7 @@ public class Email {
 
     private static string baseAddress = "https://api.mailersend.com/v1/email";
 
+    //função para enviar o email
     public static async Task<bool> PostAsync(int type, string ticker, double price) {
         var parameters = new
         {
@@ -115,6 +117,7 @@ public class APIResults {
     public double regularMarketPrice { get; set; }
 }
 
+//classe principal do programa
 public class Program {
     public static IConfiguration secret = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 
@@ -134,7 +137,7 @@ public class Program {
             Console.WriteLine(s);
         }
         
-        double lowerBound = 1e15, upperBound = 1e16;
+        double lowerBound = INFlowerBound, upperBound = INFupperBound;
 
         if(args.Length == 0){
             Console.WriteLine("Insira o ativo a ser monitorado como argumento.");
@@ -220,8 +223,10 @@ public class Program {
                 }
             }
 
+            //isso faz com que ele faça as chamadas da API a cada 30 segundos
             await Task.Delay(TimeSpan.FromSeconds(30));
 
+            //isso faz com que ele aguarde caso o mercado esteja fechado
             while(DateTime.Now.TimeOfDay.Hours <= 7 || DateTime.Now.TimeOfDay.Hours >= 18){
                 Console.WriteLine($"Mercado brasileiro fechado. Esperando abrir para continuar a monitorar o ativo. Horário atual {DateTime.Now.TimeOfDay.Hours}:{DateTime.Now.TimeOfDay.Minutes}:{DateTime.Now.TimeOfDay.Seconds}");
                 await Task.Delay(TimeSpan.FromMinutes(1));

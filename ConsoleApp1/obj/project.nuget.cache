@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CAVna7iqeu2UCjhnSJ8fQzpSCUpVw09b0b1Nj0o3IY1yVh2YtO2uBR8dztgKRUPt7WExJExtE593cj1Qqo3uVg==",
+  "dgSpecHash": "XfiFU/tbbpah39jO1yVkgm3N1aSGeu+dSG+oR+SCQVT/AmfTitJPseLMF4/QkjLn7uuUeylN6F1uBn+/1/Bg5w==",
   "success": true,
   "projectFilePath": "/home/frederico/Arquivos/code/inoa/DESAFIO-BT---INOA/ConsoleApp1/ConsoleApp1.csproj",
   "expectedPackageFiles": [
@@ -13,13 +13,9 @@
     "/home/frederico/.nuget/packages/microsoft.extensions.fileproviders.physical/9.0.3/microsoft.extensions.fileproviders.physical.9.0.3.nupkg.sha512",
     "/home/frederico/.nuget/packages/microsoft.extensions.filesystemglobbing/9.0.3/microsoft.extensions.filesystemglobbing.9.0.3.nupkg.sha512",
     "/home/frederico/.nuget/packages/microsoft.extensions.primitives/9.0.3/microsoft.extensions.primitives.9.0.3.nupkg.sha512",
-    "/home/frederico/.nuget/packages/microsoft.net.illink.tasks/8.0.14/microsoft.net.illink.tasks.8.0.14.nupkg.sha512",
     "/home/frederico/.nuget/packages/system.io.pipelines/9.0.3/system.io.pipelines.9.0.3.nupkg.sha512",
     "/home/frederico/.nuget/packages/system.text.encodings.web/9.0.3/system.text.encodings.web.9.0.3.nupkg.sha512",
-    "/home/frederico/.nuget/packages/system.text.json/9.0.3/system.text.json.9.0.3.nupkg.sha512",
-    "/home/frederico/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.14/microsoft.netcore.app.runtime.win-x64.8.0.14.nupkg.sha512",
-    "/home/frederico/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.14/microsoft.aspnetcore.app.runtime.win-x64.8.0.14.nupkg.sha512",
-    "/home/frederico/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.14/microsoft.netcore.app.host.win-x64.8.0.14.nupkg.sha512"
+    "/home/frederico/.nuget/packages/system.text.json/9.0.3/system.text.json.9.0.3.nupkg.sha512"
   ],
   "logs": []
 }
